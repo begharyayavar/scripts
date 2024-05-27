@@ -14,6 +14,10 @@ sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 
+# TLP (power saving)
+sudo apt install tlp
+sudo tlp start
+
 # Asus CTL
 
 
@@ -21,8 +25,6 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo apt-get install vscode
 
 
-## GOGH Colors
-echo "10 11 12" `# insert colors here #` | bash -c  "$(wget -qO- https://git.io/vQgMr)" 
 
 
 
@@ -37,5 +39,10 @@ sudo apt-get install ipython3
 # install Haskell
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 # install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs  | sh
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+# install mainline kernel manager 
+sudo add-apt-repository ppa:cappelikan/ppa
+sudo apt update
+sudo apt install mainline
 
