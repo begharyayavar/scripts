@@ -16,7 +16,13 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 # Asus CTL
 
+# zsh
+# powerline fonts
+
+
 # tlp
+sudo apt install tlp
+sudo service tlp start
 
 # Applications
 sudo apt install dconf-editor
