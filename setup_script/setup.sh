@@ -1,52 +1,58 @@
 #!/bin/bash
 
 # base setup
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-get -y autoremove
+apt-get update;
+apt-get -y upgrade;
+apt-get -y autoremove;
 
-sudo apt-get install ubuntu-restricted-*
+apt-get install ubuntu-restricted-*;
 
 # Programs
+
 ## Flathub Store
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+apt-get install -y flatpak;
+apt-get install -y gnome-software-plugin-flatpak;
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo;
 
+## Google Chrome
+wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb";
+apt-get install -y ./google-chrome-stable_current_amd64.deb
+rm ./google-chrome-stable_current_amd64.deb
 
-# Asus CTL
+## Vim
+apt-get install -y vim
+
+## Asus CTL
 
 # zsh
-# powerline fonts
+## powerline fonts
 
-
-# tlp
-sudo apt install tlp
-sudo service tlp start
+## tlp
+apt-get install -y tlp
+service tlp start
 
 # Applications
-sudo apt install dconf-editor
+apt install -y dconf-editor
 
-# Gradience 
+## Gradience 
 
 # Programming
 
 ## VSCode
-sudo apt-get install vscode
+sudo apt-get install software-properties-common apt-transport-https wget -y
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt-get install code
 
 ## VSCode Extensions
 
 ## GOGH Colors
 echo "10 11 12" `# insert colors here #` | bash -c  "$(wget -qO- https://git.io/vQgMr)" 
 
-
-
-
-
 # install python and utilities
-sudo apt-get install python3
-sudo apt-get install pypy3
-sudo apt-get install ipython3
+sudo apt-get install -y python3
+sudo apt-get install -y pypy3
+sudo apt-get install -y ipython3
 
 # install Haskell
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
