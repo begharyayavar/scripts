@@ -29,3 +29,5 @@ choco install parsec --version 20240209.00 -y
 choco install sunshine --version 0.23.1 -y
 choco install fxsound --version 1.1.22 -y
 choco install flow-launcher --version 1.18.0 -y
+choco install hwinfo --version 7.72 -y
+choco install msiafterburner --version 4.6.5.230429 -y
